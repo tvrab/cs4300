@@ -74,11 +74,3 @@ python3 -m pytest homework1/tests/test_task7.py
 ```
 
 ---
-
-## Submission Checklist
-
-- [x] Environment & repo structure verified (10 pts)
-- [x] All 28 unit tests passing across Tasks 1–7 (86 pts)
-- [x] Code quality, docstrings, and inline comments included (4 pts)
-- [x] Pushed to GitHub repository `cs4300`
-- [x] Downloaded `cs4300` folder ready for Canvas submission
