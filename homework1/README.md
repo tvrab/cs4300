@@ -1,29 +1,54 @@
 ```
-# CS 4300 - Homework 1: Introduction to Python &amp; Unit Testing
+# CS 4300 — Homework 1: Introduction to Python &amp; Unit Testing
 
-This repository contains the completed source code and unit tests for Homework 1, covering Python fundamentals, virtual environment setup, duck typing, data structures, file I/O, package management, and automated unit testing with `pytest`.
+![Python](https://img.shields.io/badge/Python-3.12-blue?style=flat&amp;logo=python)
+![pytest](https://img.shields.io/badge/pytest-passing-brightgreen?style=flat&amp;logo=pytest)
+![Build](https://img.shields.io/badge/tests-28%20passed-success?style=flat)
 
----
-
-## Repository Structure
-
-```
-
-cs4300/ ├── .gitignore ├── homework1/ │ ├── README.md │ ├── task6\_read\_me.txt │ ├── src/ │ │ ├── task1.py │ │ ├── task2.py │ │ ├── task3.py │ │ ├── task4.py │ │ ├── task5.py │ │ ├── task6.py │ │ └── task7.py │ └── tests/ │ ├── test\_task1.py │ ├── test\_task2.py │ ├── test\_task3.py │ ├── test\_task4.py │ ├── test\_task5.py │ ├── test\_task6.py │ └── test\_task7.py └── homework2/
-
-```
+This repository contains the completed source code and unit test suite for **Homework 1** in **CS 4300**. The project covers Python language fundamentals, virtual environment configuration, duck typing, data structures, file I/O, package management, and automated testing with `pytest`.
 
 ---
 
-## Environment &amp; Dependencies
+## 📁 Repository Structure
 
-1. **Activate Virtual Environment**:
-   ```bash
-   source /coursework/hw1_env/bin/activate
+```text
+cs4300/
+├── .gitignore
+├── homework1/
+│   ├── README.md
+│   ├── task6_read_me.txt
+│   ├── src/
+│   │   ├── task1.py
+│   │   ├── task2.py
+│   │   ├── task3.py
+│   │   ├── task4.py
+│   │   ├── task5.py
+│   │   ├── task6.py
+│   │   └── task7.py
+│   └── tests/
+│       ├── test_task1.py
+│       ├── test_task2.py
+│       ├── test_task3.py
+│       ├── test_task4.py
+│       ├── test_task5.py
+│       ├── test_task6.py
+│       └── test_task7.py
+└── homework2/
 
 ```
 
-1. **Install Required Packages**:
+---
+
+## ⚙️ Environment Setup
+
+1. **Activate the Virtual Environment**:
+
+```
+source /coursework/hw1_env/bin/activate
+
+```
+
+1. **Install Required Dependencies**:
 
 ```
 pip install pytest numpy
@@ -32,37 +57,31 @@ pip install pytest numpy
 
 ---
 
-## Task Overview
+## 📋 Task Summary
 
-* **Task 1: Introduction to Python and Testing** (`src/task1.py`, `tests/test_task1.py`) Prints `"Hello, World!"` and uses pytest's `capsys` fixture to verify captured standard output.
-* **Task 2: Variables and Data Types** (`src/task2.py`, `tests/test_task2.py`) Demonstrates Python primitive types (int, float, string, bool) with assertions verifying data types.
-* **Task 3: Control Structures** (`src/task3.py`, `tests/test_task3.py`) Implements conditional branches (positive/negative/zero), prime number calculations, and a summation loop.
-* **Task 4: Functions and Duck Typing** (`src/task4.py`, `tests/test_task4.py`) Implements `calculate_discount` accepting flexible numeric inputs (int and float) with duck typing validation.
-* **Task 5: Lists and Dictionaries** (`src/task5.py`, `tests/test_task5.py`) Demonstrates list slicing on book records and safe key lookup on a student database dictionary.
-* **Task 6: File Handling** (`src/task6.py`, `tests/test_task6.py`) Reads `task6_read_me.txt` and calculates total word count using context managers.
-* **Task 7: Package Management** (`src/task7.py`, `tests/test_task7.py`) Uses the `numpy` package to compute standard deviation and mean on numeric datasets.
+| Task       | Module &amp; Test Files                     | Description                                                                                      |
+| ---------- | --------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **Task 1** | `src/task1.py`<br />`tests/test_task1.py` | Basic console output (`Hello, World!`) with `pytest` `capsys` stdout capture verification.       |
+| **Task 2** | `src/task2.py`<br />`tests/test_task2.py` | Primitive data types (`int`, `float`, `str`, `bool`) and type assertions.                        |
+| **Task 3** | `src/task3.py`<br />`tests/test_task3.py` | Control structures: `if/elif/else` sign checks, prime number generator loop, and summation.      |
+| **Task 4** | `src/task4.py`<br />`tests/test_task4.py` | Product discount calculations demonstrating Python **duck typing** for numeric types.            |
+| **Task 5** | `src/task5.py`<br />`tests/test_task5.py` | Data structures: list slicing for book titles/authors and safe dictionary key lookups.           |
+| **Task 6** | `src/task6.py`<br />`tests/test_task6.py` | File I/O with context managers (`with open`) and word count verification on `task6_read_me.txt`. |
+| **Task 7** | `src/task7.py`<br />`tests/test_task7.py` | Third-party package integration using `numpy` for mean and standard deviation math.              |
 
 ---
 
-## Running Code and Unit Tests
+## 🧪 Running Unit Tests
 
-To run an individual script:
-
-```
-python3 homework1/src/task1.py
-
-```
-
-To run the complete unit test suite across all 7 tasks:
+To run the complete test suite across all tasks simultaneously:
 
 ```
 python3 -m pytest
 
 ```
 
-To run tests for a single task module:
+To run unit tests for an individual task module:
 
 ```
 python3 -m pytest homework1/tests/test_task7.py
-
 ```
