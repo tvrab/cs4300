@@ -1,0 +1,17 @@
+# Python & Environment Exclusions
+# Created since I am working on different operating systems as I develop this
+
+# OS- specefic virtual environment folder
+myenv/
+
+# Compiled Python bytecode files that automatically generate at runtime
+__pycache__/
+*.__pyc
+
+# Database & System exclusions
+
+# Local SQLite database file (prevents database lock/sync conflicts across platforms)
+db.sqlite3
+
+# mac folder metadata file
+.DS_Store
