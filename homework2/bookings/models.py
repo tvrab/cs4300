@@ -18,6 +18,11 @@ class Movie(models.Model):
         release_date (DateField): The official release date.
         duration (IntegerField): Total runtime in minutes.
     """
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    release_date = models.DateField()
+    duration = models.IntegerField(help_text="Duration in minutes")
+    
     def __str__(self):
         """ Return a user-friendly string representation of the movie. """
         return f"{self.title} ({self.duration} mins)"
