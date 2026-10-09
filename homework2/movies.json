@@ -28,5 +28,209 @@
     "release_date": "2016-08-22",
     "duration": 55
   }
+},
+{
+  "model": "bookings.seat",
+  "pk": 1,
+  "fields": {
+    "seat_number": "A1",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 2,
+  "fields": {
+    "seat_number": "A2",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 3,
+  "fields": {
+    "seat_number": "A3",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 4,
+  "fields": {
+    "seat_number": "B1",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 5,
+  "fields": {
+    "seat_number": "B2",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 6,
+  "fields": {
+    "seat_number": "B3",
+    "is_booked": true
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 7,
+  "fields": {
+    "seat_number": "B4",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 8,
+  "fields": {
+    "seat_number": "B5",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 9,
+  "fields": {
+    "seat_number": "C1",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 10,
+  "fields": {
+    "seat_number": "C2",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 11,
+  "fields": {
+    "seat_number": "C",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 12,
+  "fields": {
+    "seat_number": "C3",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 13,
+  "fields": {
+    "seat_number": "C4",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 14,
+  "fields": {
+    "seat_number": "C5",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 15,
+  "fields": {
+    "seat_number": "C6",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 16,
+  "fields": {
+    "seat_number": "C7",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 17,
+  "fields": {
+    "seat_number": "A4",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.seat",
+  "pk": 18,
+  "fields": {
+    "seat_number": "A5",
+    "is_booked": false
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 1,
+  "fields": {
+    "movie": 1,
+    "seat": 1,
+    "user": "Jane Doe",
+    "booking_date": "2026-10-08T17:22:55.833Z"
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 2,
+  "fields": {
+    "movie": 1,
+    "seat": 2,
+    "user": "bob",
+    "booking_date": "2026-10-08T17:23:50.995Z"
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 3,
+  "fields": {
+    "movie": 1,
+    "seat": 6,
+    "user": "Bob",
+    "booking_date": "2026-10-08T19:18:13.627Z"
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 4,
+  "fields": {
+    "movie": 2,
+    "seat": 1,
+    "user": "Sir Charles",
+    "booking_date": "2026-10-08T20:01:03.773Z"
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 5,
+  "fields": {
+    "movie": 1,
+    "seat": 9,
+    "user": "Charleeee",
+    "booking_date": "2026-10-08T20:01:21.971Z"
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 6,
+  "fields": {
+    "movie": 3,
+    "seat": 8,
+    "user": "Jane Doe",
+    "booking_date": "2026-10-08T20:01:39.091Z"
+  }
 }
 ]
