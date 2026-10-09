@@ -56,13 +56,13 @@ class Booking(models.Model):
     """
 
     # CASCADE deletes linked bookings if the referenced movie/seat/user is removed
-    movie = models.ForeignKey(Movie, on_delete=models.CASCADE, related_name="bookings")
-    seat = models.ForeignKey(Seat, on_delete=models.CASCADE, related_name="bookings")
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="bookings")
+    movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
+    seat = models.ForeignKey(Seat, on_delete=models.CASCADE)
+    user = models.CharField(max_length=100) 
 
     # Automatically records the current date/time when a booking record is first created
     booking_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         """ Return a formatted summary string of the booking record."""
-        return f"Booking #{self.id}: {self.user.username} - {self.movie.title} (Seat {self.seat_number})"
+        return f"Booking for: {self.user} - {self.movie.title} (Seat {self.seat.seat_number})"

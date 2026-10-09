@@ -6,6 +6,7 @@ serializer validation, and REST API endpoint status codes.
 """
 
 from django.test import TestCase
+from django.urls import reverse
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient
 from rest_framework import status
@@ -58,6 +59,22 @@ class SeatModelTest(TestCase):
         for seat, expected_str in test_cases:
             with self.subTest(seat=seat.seat_number):
                 self.assertEqual(str(seat), expected_str)
+
+class BookingModelTest(TestCase): 
+    """Test suite for the Booking model.""" 
+    def setUp(self): 
+        self.movie = Movie.objects.create(
+            title="Catch and Release", 
+            release_date="2006-10-20", 
+            duration=124
+        ) 
+        self.seat = Seat.objects.create(seat_number="A1", is_booked=True) 
+        self.booking = Booking.objects.create(movie=self.movie, seat=self.seat, user="Jane Doe") 
+        
+    def test_booking_str_representation(self): 
+        """Verify __str__ output formatting for Booking objects.""" 
+        expected_str = f"Booking for: Jane Doe - Catch and Release (Seat A1)" 
+        self.assertEqual(str(self.booking), expected_str)
 
 class BookingAPITest(TestCase):
     """ 
@@ -123,3 +140,53 @@ class BookingAPITest(TestCase):
 
         # Expect 400 Bad Request due to serializer validation
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_get_seats_api_endpoint(self): 
+        """Verify GET request to /api/seats/ returns HTTP 200 OK.""" 
+        response = self.client.get('/api/seats/') 
+        self.assertEqual(response.status_code, status.HTTP_200_OK) 
+    
+    def test_get_bookings_api_endpoint(self): 
+        """Verify GET request to /api/bookings/ returns HTTP 200 OK.""" 
+        response = self.client.get('/api/bookings/') 
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+class WebViewTests(TestCase):
+    """ Tests HTML template views """
+    def setUp(self):
+        self.movie = Movie.objects.create(
+            title="Catch and Release",
+            description="A test movie description.",
+            release_date="2006-10-20",
+            duration=124,
+        )
+        self.seat = Seat.objects.create(seat_number="A1", is_booked=False)
+
+    def test_movie_list_view(self):
+        """ Verify GET request to movie list page renders correctly."""
+        response = self.client.get(reverse('movie_list'))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, 'bookings/movie_list.html')
+        self.assertContains(response, "Catch and Release")
+
+    def test_seat_booking_get_view(self):
+        """Verify GET request renders the seat selection form.""" 
+        response = self.client.get(reverse('seat_booking', args=[self.movie.id])) 
+        self.assertEqual(response.status_code, 200) 
+        self.assertTemplateUsed(response, 'bookings/seat_booking.html') 
+        
+    def test_seat_booking_post_success(self): 
+        """Verify POST request submits the booking form and redirects to history.""" 
+        response = self.client.post( reverse('seat_booking', args=[self.movie.id]), {'seat_id': self.seat.id, 'user_name': 'Jane Doe'} ) 
+        
+        # Should redirect (HTTP 302) to booking history 
+        self.assertEqual(response.status_code, 302) 
+        
+        # Check that the record was created in the database 
+        self.assertTrue(Booking.objects.filter(user='Jane Doe').exists()) 
+    
+    def test_booking_history_view(self): 
+        """Verify GET request to booking history page renders correctly.""" 
+        response = self.client.get(reverse('booking_history')) 
+        self.assertEqual(response.status_code, 200) 
+        self.assertTemplateUsed(response, 'bookings/booking_history.html')

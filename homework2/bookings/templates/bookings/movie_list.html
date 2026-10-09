@@ -1,0 +1,19 @@
+{# Movie catalog listing page #}
+{% extends 'bookings/base.html' %}
+
+{% block content %}
+<h2 class="mb-3">Available Movies</h2>
+
+<div class="list-group">
+    {% for movie in movies %}
+    <div class="list-group-item mb-3 p-3 border rounded shadow-sm">
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.description }}</p>
+        <p class="text-muted"><strong>Duration:</strong> {{ movie.duration }} mins | <strong>Release Date:</strong> {{ movie.release_date }}</p>
+        <a href="{% url 'seat_booking' movie.id %}" class="btn btn-success">Select Seats</a>
+    </div>
+    {% empty %}
+    <p>No movies available right now.</p>
+    {% endfor %}
+</div>
+{% endblock %}

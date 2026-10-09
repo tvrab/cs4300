@@ -7,6 +7,6 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # Include bookings app routes at the root level
+    # Include bookings app routes
     path('', include('bookings.urls')),
 ]
