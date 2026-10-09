@@ -1,0 +1,32 @@
+[
+{
+  "model": "bookings.movie",
+  "pk": 1,
+  "fields": {
+    "title": "Pickle Heists from 1998-2009",
+    "description": "A documentary that covers all of the great heists of pickles that occurred between 1998 and 2009.",
+    "release_date": "2012-06-23",
+    "duration": 99
+  }
+},
+{
+  "model": "bookings.movie",
+  "pk": 2,
+  "fields": {
+    "title": "Peter Piper: Pickled Pepper Picker or Pickle Heist Leader?",
+    "description": "A thrilling look into the life of Peter Piper. Was he actually picking pecks of pickled peppers, or was that just to distract us from his pickle heisting activities?",
+    "release_date": "2014-05-07",
+    "duration": 121
+  }
+},
+{
+  "model": "bookings.movie",
+  "pk": 3,
+  "fields": {
+    "title": "How To Pickle Peppers the Peter Piper way",
+    "description": "Ever wonder how exactly pickled peppers are made? This video takes you from farm to table, showing all the important steps along the way!",
+    "release_date": "2016-08-22",
+    "duration": 55
+  }
+}
+]
